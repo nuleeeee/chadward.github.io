@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="static/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/index.css" rel="stylesheet" />
+    <link rel="icon" href="static/icons/chad.jpg" />
+    <title>{% block title %}Home{% endblock %}</title>
+  </head>
+  <body class="bg-body-tertiary">
+
+    <div class="container fixed-top mt-1">
+      <nav class="navbar navbar-expand-lg rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand col-lg-3 me-0" href="/" id="logo">
+            <img src="static/icons/chad.jpg" class="rounded-3" alt="" height="30" />
+            <label>Nols</label>
+          </a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="offcanvas offcanvas-end d-lg-flex collapse" id="navbar" style="">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">
+                <img src="static/icons/chad.jpg" class="rounded-3" alt="" height="30" />
+                Nols
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                {% if user.is_authenticated %}
+                  <li class="nav-item"><a class="nav-link active" id="home" href="/">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" id="logout" href="/logout">Logout</a></li>
+                {% else %}
+                  <li class="nav-item"><a class="nav-link" id="signup" href="/sign-up">Sign Up</a></li>
+                  <li class="nav-item"><a class="nav-link" id="login" href="/login">Sign In</a></li>
+                {% endif %}
+              </ul>
+              <div class="d-lg-flex col-lg-4 justify-content-lg-end">
+                <a class="btn btn-outline-secondary" target="_self" href="https://www.facebook.com/nuleeeee">@Message Me!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          {% if category == 'error' %}
+            <div aria-live="polite" class="position-sticky top-0 toast-sticky-top">
+              <div class="toast-container top-0 end-0 p-3">
+                <div class="toast" role="alert">
+                  <div class="toast-header">
+                    <img src="static/icons/chad.jpg" class="rounded me-2" alt="" height="30" />
+                    <strong class="me-auto">Bootstrap</strong>
+                    <button type="button" class="btn-close bg-secondary bg-opacity-10 rounded-pill p-1" data-bs-dismiss="toast"></button>
+                  </div>
+                  <div class="toast-body">
+                    {{ message }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div aria-live="polite" class="position-sticky top-0 toast-sticky-top">
+              <div class="toast-container top-0 end-0 p-3">
+                <div class="toast" role="alert">
+                  <div class="toast-header">
+                    <img src="static/icons/chad.jpg" class="rounded me-2" alt="" height="30" />
+                    <strong class="me-auto">Bootstrap</strong>
+                    <button type="button" class="btn-close bg-secondary bg-opacity-10 rounded-pill p-1" data-bs-dismiss="toast"></button>
+                  </div>
+                  <div class="toast-body">
+                    {{ message }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    {% include 'modal.html' %}
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2025 Chadward, Inc.</p>
+      </footer>
+    </div>
+
+    <script src="static/bootstrap.bundle.min.js"></script>
+    <script src="static/jquery.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+  </body>
+</html>

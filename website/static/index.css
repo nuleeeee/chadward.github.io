@@ -1,0 +1,15 @@
+/* 
+ * Base navbar
+*/
+.navbar.scrolled {
+    box-shadow: 0 2px 5px rgba(67, 78, 160, 0.5);
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 
+ * Let toast stick to top
+*/
+.toast-sticky-top {
+    z-index: 1050;
+}

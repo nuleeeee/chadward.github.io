@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+
+{% block content %}
+
+<br>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <img src="static/icons/1.avif" class="img-fluid rounded"  alt=""/>
+    <h1 class="text-body-emphasis">Legend</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      And all the winter of fearful adversaries,
+      Now are our house
+      And all the clouds that am curtail'd of fearful marches to delightful adversaries,
+      Now are our brows bound war hath smooth'd his wreaths;
+      To strut before a want lour'd upon our bruised arms hung up for made glorious wrinkled fron
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      Not functionable button
+    </button>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <img src="static/icons/2.avif" class="img-fluid rounded"  alt=""/>
+    <h1 class="text-body-emphasis">“This is fine”</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      free-sha-vokka-doo
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button" data-bs-toggle="modal" data-bs-target="#modalChoice">
+      Call to action
+    </button>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <img src="static/icons/3.avif" class="img-fluid rounded"  alt=""/>
+    <h1 class="text-body-emphasis">"YEET"</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      "YEET"
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      Call to action
+    </button>
+  </div>
+</div>
+
+<div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Custom cards</h2>
+
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <img src="static/icons/chadward.jpg" alt="Bootstrap" class="img-thumbnail">
+          <div class="text-center mt-auto">
+            <small>Peak</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <img src="static/icons/sqwe.jpg" alt="Bootstrap" class="img-thumbnail">
+          <div class="text-center mt-auto">
+            <small>Majestic</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+          <img src="static/icons/me-painting.jpg" alt="Bootstrap" class="img-thumbnail">
+          <div class="text-center mt-auto">
+              <small>Giga</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
